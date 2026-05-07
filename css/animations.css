@@ -1,0 +1,140 @@
+/* animations.css - All Keyframes and Animation Logic */
+
+/* Scroll Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered reveal animation for project cards */
+.project-card.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card.reveal:nth-child(1) { transition-delay: 0.1s; }
+.project-card.reveal:nth-child(2) { transition-delay: 0.2s; }
+.project-card.reveal:nth-child(3) { transition-delay: 0.3s; }
+.project-card.reveal:nth-child(4) { transition-delay: 0.4s; }
+.project-card.reveal:nth-child(5) { transition-delay: 0.5s; }
+.project-card.reveal:nth-child(6) { transition-delay: 0.6s; }
+
+/* Heading Glow Animation */
+h1, h2, h3 {
+    animation: headingGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes headingGlow {
+    0% { text-shadow: 0 0 5px rgba(79, 70, 229, 0.2); }
+    100% { text-shadow: 0 0 15px rgba(79, 70, 229, 0.4), 0 0 25px rgba(6, 182, 212, 0.3); }
+}
+
+/* AI Transition Effects */
+.ai-fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: aiFadeIn 0.8s forwards ease-out;
+}
+
+@keyframes aiFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Gradient Shift */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* AI Glow Effect */
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 5px rgba(4, 68, 62, 0.2); }
+    50% { box-shadow: 0 0 20px rgba(80, 119, 128, 0.5); }
+}
+
+.ai-glow {
+    animation: glow 4s infinite ease-in-out;
+}
+
+/* Logo Animation */
+@keyframes logoBounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Contact Form Pulse & Zoom */
+@keyframes formPulse {
+    0%, 100% { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
+    50% { box-shadow: 0 2px 20px rgba(4, 68, 62, 0.2); }
+}
+
+@keyframes zoomIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Spinner Animation */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Hero Subtitle & Text Animations */
+@keyframes heroSubtitleIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-25px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes heroTextIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Filtering Transitions */
+.project-grid {
+    transition: opacity 0.3s ease;
+}
+
+.project-grid.filtering {
+    opacity: 0.5;
+}
+
+.project-grid.filtering-done {
+    opacity: 1;
+}
+
+.project-grid.filtering-complete {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Skill Progress Transition */
+.skill-progress {
+    transition: width 1.5s cubic-bezier(0.1, 0.42, 0.41, 1);
+}

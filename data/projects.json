@@ -1,0 +1,42 @@
+[
+    {
+        "id": "1",
+        "name": "HealthAI Diagnostics",
+        "description": "An AI-powered diagnostic tool helping healthcare professionals identify conditions from medical data using machine learning.",
+        "techStack": ["Python", "FastAPI", "TensorFlow", "Next.js"],
+        "category": "Healthcare Technology",
+        "imageUrl": "assets/project1.png"
+    },
+    {
+        "id": "2",
+        "name": "Medical Support Chatbot",
+        "description": "An intelligent chatbot designed to provide instant support and information to patients regarding their BSN nursing queries.",
+        "techStack": ["Python", "Claude AI", "FastAPI", "React"],
+        "category": "AI/Chatbots",
+        "imageUrl": "assets/project2.png"
+    },
+    {
+        "id": "3",
+        "name": "Metaverse Education Portal",
+        "description": "A virtual reality environment for immersive nursing education and AI training in the metaverse.",
+        "techStack": ["TypeScript", "Three.js", "AI Integration", "Next.js"],
+        "category": "Metaverse & AI",
+        "imageUrl": "assets/project3.png"
+    },
+    {
+        "id": "4",
+        "name": "AI Portfolio v2",
+        "description": "A modern, highly interactive portfolio showcasing the convergence of nursing and advanced AI engineering.",
+        "techStack": ["HTML", "CSS", "TypeScript", "Next.js"],
+        "category": "Web Development",
+        "imageUrl": "assets/project4.png"
+    },
+    {
+        "id": "5",
+        "name": "Data-Driven Patient Care",
+        "description": "Visualizing complex patient data to improve outcomes through AI-driven insights and predictive modeling.",
+        "techStack": ["Python", "D3.js", "AI Modeling", "FastAPI"],
+        "category": "Data Science",
+        "imageUrl": "assets/project5.png"
+    }
+]

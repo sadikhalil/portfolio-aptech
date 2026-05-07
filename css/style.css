@@ -1,0 +1,78 @@
+/* style.css - Main Entry Point */
+
+@import url('base.css');
+@import url('components.css');
+@import url('animations.css');
+@import url('responsive.css');
+
+/* Utility classes or specific overrides can go here */
+.spinner {
+    display: none;
+    width: 40px;
+    height: 40px;
+    margin: var(--spacing-xl) auto;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.spinner.show {
+    display: block;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-top: var(--spacing-xs);
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.status-message {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    display: none;
+}
+
+.status-message.show {
+    display: block;
+}
+
+.status-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.tech-stack {
+    display: flex;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-md);
+}
+
+.tech-stack span {
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    padding: 2px var(--spacing-sm);
+    border-radius: 12px;
+    font-size: 0.8rem;
+    border: 1px solid var(--border-color);
+}
+
+body.dark-theme .tech-stack span {
+    background-color: var(--dark-mode-background-color);
+    color: var(--dark-mode-text-color);
+    border-color: var(--dark-mode-border-color);
+}

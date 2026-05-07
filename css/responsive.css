@@ -1,0 +1,112 @@
+/* responsive.css - Media Queries */
+
+@media (max-width: 1024px) {
+    section {
+        padding: calc(var(--spacing-lg) * 1.5) var(--spacing-md);
+    }
+
+    .experience-item {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    #main-nav {
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
+    }
+
+    #main-nav .logo a {
+        font-size: 1.25rem;
+    }
+
+    #main-nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--card-background-color);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: var(--spacing-md) 0;
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+
+    body.dark-theme #main-nav ul {
+        background-color: var(--dark-mode-card-background-color);
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    }
+
+    #main-nav ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero-section {
+        min-height: auto;
+        text-align: center;
+    }
+
+    .hero-intro h1 {
+        font-size: 2.4rem;
+    }
+
+    .project-card {
+        flex-direction: column;
+        align-items: stretch;
+        padding: var(--spacing-md);
+    }
+
+    .project-image {
+        width: 90px;
+        height: 90px;
+        margin: 0 auto;
+    }
+
+    button,
+    .button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-section {
+        padding: 2rem 1rem;
+    }
+
+    .skills-category,
+    .experience-item,
+    .project-card,
+    #contact-form {
+        border-radius: calc(var(--border-radius) * 0.8);
+    }
+
+    .skills-category {
+        padding: 1rem;
+    }
+
+    .experience-item {
+        padding: 1rem;
+    }
+
+    .project-card {
+        padding: 1rem;
+    }
+
+    #contact-form {
+        margin: var(--spacing-md) 0;
+    }
+}
