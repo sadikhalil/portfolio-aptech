@@ -1,99 +1,248 @@
-/* responsive.css - Media Queries */
 
+html {
+    font-size: 16px;
+}
+
+/* ----------------------------------------------------------
+   TABLET — 1024px and below
+   ---------------------------------------------------------- */
 @media (max-width: 1024px) {
+
     section {
         padding: calc(var(--spacing-lg) * 1.5) var(--spacing-md);
     }
 
-    .experience-item {
-        grid-template-columns: 1fr;
+    /* Skills: 2 columns instead of 4 */
+    .skills-categories {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .project-card {
+    /* Experience: single column */
+    .experience-item {
+        grid-template-columns: 1fr;
         gap: var(--spacing-md);
+    }
+
+    /* Projects: 2 columns */
+    .project-grid,
+    #projects-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/* ----------------------------------------------------------
+   LARGE MOBILE / SMALL TABLET — 768px and below
+   ---------------------------------------------------------- */
 @media (max-width: 768px) {
+
+    /* --- Root font scaling (fixes all rem-based text) --- */
+    html {
+        font-size: 15px;
+    }
+
+    /* --- Header & Nav --- */
     header {
         padding: var(--spacing-sm) var(--spacing-md);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
     }
 
     #main-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         flex-wrap: wrap;
         gap: var(--spacing-sm);
+        position: relative;
     }
 
-    #main-nav .logo a {
-        font-size: 1.25rem;
+    /* Logo */
+    #main-nav .logo a,
+    #main-nav .logo {
+        font-size: 1.2rem;
     }
 
+    /* Nav links: hidden by default, revealed when .active is toggled by JS */
     #main-nav ul {
         display: none;
         flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
         width: 100%;
-        background-color: var(--card-background-color);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: var(--card-background-color, #fff);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
         padding: var(--spacing-md) 0;
         text-align: center;
-        gap: var(--spacing-md);
+        gap: 0;
+        margin: 0;
+        list-style: none;
+        border-radius: 0 0 8px 8px;
     }
 
-    body.dark-theme #main-nav ul {
-        background-color: var(--dark-mode-card-background-color);
-        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    #main-nav ul li a {
+        display: block;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
     }
 
     #main-nav ul.active {
         display: flex;
     }
 
-    .menu-toggle {
-        display: block;
+    /* Dark mode nav dropdown */
+    body.dark-theme #main-nav ul {
+        background-color: var(--dark-mode-card-background-color, #1a1a2e);
+        box-shadow: 0 6px 16px rgba(255, 255, 255, 0.08);
     }
 
+    /* Hamburger toggle button */
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: 1.5px solid currentColor;
+        border-radius: 6px;
+        padding: 6px 10px;
+        cursor: pointer;
+        font-size: 1.25rem;
+        color: inherit;
+        line-height: 1;
+        opacity: 0.8;
+        transition: opacity 0.2s;
+    }
+
+    .menu-toggle:hover {
+        opacity: 1;
+    }
+
+    /* --- Hero Section --- */
     .hero-section {
         min-height: auto;
         text-align: center;
+        padding: 3rem 1.25rem;
     }
 
     .hero-intro h1 {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
+        line-height: 1.25;
     }
 
+    .hero-subtitle {
+        font-size: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.3rem;
+    }
+
+    .intro-text {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* --- Skills: 1 column --- */
+    .skills-categories {
+        grid-template-columns: 1fr;
+    }
+
+    /* --- Experience --- */
+    .experience-item {
+        grid-template-columns: 1fr;
+        padding: var(--spacing-md);
+    }
+
+    .experience-left {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    /* --- Projects: 1 column --- */
+    .project-grid,
+    #projects-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    /* Project card inner layout */
     .project-card {
         flex-direction: column;
         align-items: stretch;
         padding: var(--spacing-md);
+        gap: var(--spacing-md);
     }
 
     .project-image {
-        width: 90px;
-        height: 90px;
+        width: 80px;
+        height: 80px;
         margin: 0 auto;
     }
 
+    /* --- Filters --- */
+    .filters {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    #project-search {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #category-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    /* --- Buttons: full width on mobile --- */
     button,
     .button {
         width: 100%;
     }
+
+    /* Exception: small filter/tag buttons stay auto width */
+    #category-filters button,
+    #category-filters .button {
+        width: auto;
+    }
+
+    /* --- Contact form --- */
+    #contact-form {
+        margin: var(--spacing-md) 0;
+    }
 }
 
+/* ----------------------------------------------------------
+   SMALL MOBILE — 600px and below
+   ---------------------------------------------------------- */
 @media (max-width: 600px) {
+
+    /* Further font scale-down */
+    html {
+        font-size: 14px;
+    }
+
+    /* --- Hero --- */
     .hero-section {
         padding: 2rem 1rem;
     }
 
+    .hero-intro h1 {
+        font-size: 1.85rem;
+    }
+
+    /* --- Tighten border radii on small screens --- */
     .skills-category,
     .experience-item,
     .project-card,
     #contact-form {
-        border-radius: calc(var(--border-radius) * 0.8);
+        border-radius: calc(var(--border-radius, 12px) * 0.75);
     }
 
+    /* --- Compact padding on cards --- */
     .skills-category {
         padding: 1rem;
     }
@@ -108,5 +257,63 @@
 
     #contact-form {
         margin: var(--spacing-md) 0;
+        padding: 1rem;
+    }
+
+    /* --- Footer --- */
+    footer {
+        text-align: center;
+        padding: 1.5rem 1rem;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .footer-links a {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.9rem;
+    }
+
+    .footer-links img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* ----------------------------------------------------------
+   EXTRA SMALL — 480px and below
+   ---------------------------------------------------------- */
+@media (max-width: 480px) {
+
+    .hero-intro h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    /* Experience stacked tightly */
+    .experience-period,
+    .experience-title {
+        display: block;
+        font-size: 0.9rem;
+    }
+
+    /* Project image smaller */
+    .project-image {
+        width: 64px;
+        height: 64px;
+    }
+
+    /* Section headings */
+    section h2 {
+        font-size: 1.5rem;
     }
 }

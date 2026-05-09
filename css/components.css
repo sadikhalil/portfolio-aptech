@@ -92,7 +92,7 @@ body.dark-theme .menu-toggle {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(135deg, var(--slate-950) 0%, var(--indigo-900, #1e1b4b) 50%, var(--slate-900) 100%);
+    background: linear-gradient(135deg, var(--slate-950) 0%, var(--indigo-900, #675f75) 50%, var(--slate-900) 100%);
     background-size: 200% 200%;
     animation: aiFadeIn 0.8s forwards ease-out, gradientShift 12s ease infinite;
     color: #ffffff;
@@ -396,7 +396,7 @@ button, .button {
 
 /* Footer */
 footer {
-    background-color: #001f4d;
+    background-color: #333c4c;
     color: #ffffff;
     text-align: center;
     padding: 40px 20px;

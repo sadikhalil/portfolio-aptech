@@ -9,31 +9,31 @@
 
 :root {
     /* Modern Midnight Horizon Palette */
-    --indigo-600: #4f46e5;
-    --indigo-400: #818cf8;
-    --indigo-500: #6366f1;
+    --indigo-600: #64c6ac;
+    --indigo-400: #a37ea0;
+    --indigo-500: #957fa9;
     --cyan-500: #06b6d4;
-    --cyan-400: #22d3ee;
+    --cyan-400: #288290;
     --slate-50: #f8fafc;
     --slate-100: #f1f5f9;
     --slate-200: #e2e8f0;
     --slate-300: #cbd5e1;
     --slate-400: #94a3b8;
     --slate-500: #64748b;
-    --slate-600: #475569;
+    --slate-600: #79889c;
     --slate-700: #334155;
-    --slate-800: #1f2937;
+    --slate-800: #818ea0;
     --slate-900: #0f172a;
     --slate-950: #020617;
 
-    --primary-color: var(--indigo-600);
+    --primary-color: var(--indigo-400);
     --secondary-color: var(--cyan-500);
     --text-color: var(--slate-800);
     --background-color: var(--slate-50);
-    --card-background-color: #ffffff;
+    --card-background-color: #d6cfcf;
     --border-color: var(--slate-200);
     
-    --primary-glow: rgba(79, 70, 229, 0.15);
+    --primary-glow: rgba(168, 195, 72, 0.15);
     --secondary-glow: rgba(6, 182, 212, 0.15);
     
     --dark-mode-text-color: var(--slate-100);
