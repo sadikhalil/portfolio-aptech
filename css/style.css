@@ -5,14 +5,14 @@
 @import url('animations.css');
 @import url('responsive.css');
 
-/* Utility classes or specific overrides can go here */
+/* ── Loading Spinner ────────────────────────────────────── */
 .spinner {
     display: none;
     width: 40px;
     height: 40px;
     margin: var(--spacing-xl) auto;
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    border-left-color: var(--primary-color);
+    border: 4px solid rgba(251, 113, 133, 0.12);   /* rose tint track */
+    border-left-color: var(--primary-color);        /* rose active arc */
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -21,9 +21,11 @@
     display: block;
 }
 
+/* ── Form Validation ────────────────────────────────────── */
 .error-message {
-    color: #dc3545;
+    color: #f43f5e;           /* rose-500 — on-brand error red  */
     font-size: 0.85rem;
+    font-family: var(--font-family-sans-serif);
     margin-top: var(--spacing-xs);
     display: none;
 }
@@ -32,10 +34,13 @@
     display: block;
 }
 
+/* ── Status Messages ────────────────────────────────────── */
 .status-message {
     margin-top: var(--spacing-md);
     padding: var(--spacing-md);
     border-radius: var(--border-radius);
+    font-family: var(--font-family-sans-serif);
+    font-size: 0.95rem;
     display: none;
 }
 
@@ -44,17 +49,30 @@
 }
 
 .status-message.success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+    background-color: rgba(20, 184, 166, 0.1);    /* teal-500 tint    */
+    color: #0f766e;                                /* teal-700         */
+    border: 1px solid rgba(20, 184, 166, 0.3);
+}
+
+body.dark-theme .status-message.success {
+    background-color: rgba(94, 234, 212, 0.1);    /* teal-300 tint    */
+    color: #5eead4;
+    border-color: rgba(94, 234, 212, 0.25);
 }
 
 .status-message.error {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
+    background-color: rgba(251, 113, 133, 0.1);   /* rose tint        */
+    color: #be123c;                                /* rose-700         */
+    border: 1px solid rgba(251, 113, 133, 0.3);
 }
 
+body.dark-theme .status-message.error {
+    background-color: rgba(251, 113, 133, 0.1);
+    color: #fda4af;                                /* rose-300         */
+    border-color: rgba(251, 113, 133, 0.25);
+}
+
+/* ── Tech Stack Tags ────────────────────────────────────── */
 .tech-stack {
     display: flex;
     gap: var(--spacing-xs);
@@ -63,16 +81,41 @@
 }
 
 .tech-stack span {
-    background-color: var(--background-color);
+    background: linear-gradient(
+        135deg,
+        rgba(251, 113, 133, 0.08),
+        rgba(20, 184, 166, 0.08)
+    );
     color: var(--secondary-color);
-    padding: 2px var(--spacing-sm);
-    border-radius: 12px;
-    font-size: 0.8rem;
-    border: 1px solid var(--border-color);
+    padding: 3px var(--spacing-sm);
+    border-radius: 20px;
+    font-family: var(--font-family-sans-serif);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border: 1px solid rgba(251, 113, 133, 0.2);
+    transition: all 0.25s ease;
+}
+
+.tech-stack span:hover {
+    background: linear-gradient(
+        135deg,
+        rgba(251, 113, 133, 0.18),
+        rgba(20, 184, 166, 0.18)
+    );
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-1px);
 }
 
 body.dark-theme .tech-stack span {
-    background-color: var(--dark-mode-background-color);
-    color: var(--dark-mode-text-color);
-    border-color: var(--dark-mode-border-color);
+    background: rgba(167, 139, 250, 0.08);
+    color: var(--teal-300, #5eead4);
+    border-color: rgba(167, 139, 250, 0.2);
+}
+
+body.dark-theme .tech-stack span:hover {
+    background: rgba(167, 139, 250, 0.18);
+    border-color: var(--violet-400, #a78bfa);
+    color: var(--violet-400, #a78bfa);
 }
